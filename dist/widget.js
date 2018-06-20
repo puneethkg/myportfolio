@@ -25120,7 +25120,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 var React = __webpack_require__(4);
-var WelcomeMessage_1 = __webpack_require__(121);
+var AppHeader_1 = __webpack_require__(205);
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
@@ -25128,7 +25128,7 @@ var App = /** @class */ (function (_super) {
     }
     App.prototype.render = function () {
         return (React.createElement("div", { className: "container" },
-            React.createElement(WelcomeMessage_1.default, null)));
+            React.createElement(AppHeader_1.default, null)));
     };
     App.displayName = "App";
     return App;
@@ -25137,39 +25137,7 @@ exports.App = App;
 
 
 /***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-Object.defineProperty(exports, "__esModule", { value: true });
-var React = __webpack_require__(4);
-var Component = /** @class */ (function (_super) {
-    __extends(Component, _super);
-    function Component() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    Component.prototype.render = function () {
-        return (React.createElement("div", null,
-            React.createElement("h1", null, "Widget loaded!!!")));
-    };
-    Component.displayName = "WelcomeMessage";
-    return Component;
-}(React.Component));
-exports.default = Component;
-
-
-/***/ }),
+/* 121 */,
 /* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28297,6 +28265,39 @@ thunk.withExtraArgument = createThunkMiddleware;
 Object.defineProperty(exports, "__esModule", { value: true });
 var redux_actions_1 = __webpack_require__(51);
 exports.getDeviceList = redux_actions_1.createAction("GET_DEVICE_LIST");
+
+
+/***/ }),
+/* 205 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+Object.defineProperty(exports, "__esModule", { value: true });
+var React = __webpack_require__(4);
+var Component = /** @class */ (function (_super) {
+    __extends(Component, _super);
+    function Component() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Component.prototype.render = function () {
+        return (React.createElement("div", { className: "app-header" },
+            React.createElement("label", { className: "app-title", htmlFor: "" }, "Puneeth")));
+    };
+    Component.displayName = "AppHeader";
+    return Component;
+}(React.Component));
+exports.default = Component;
 
 
 /***/ })

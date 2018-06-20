@@ -41,6 +41,8 @@ Layout Styles
 body{
     letter-spacing: 0.5px;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin:0;
+    padding:0;
 }
 
 label {
@@ -50,20 +52,22 @@ label {
 
 .container {
     height: 100%;
-    width: 935px;
+    width: 80%;
     margin: auto;
-    background-color: #F4F7F6;
+    background-color: #fff;
     padding: 10px;
 }
 
 .app-header {
-    background-color: #F3F2F0;
-    color: #000;
+    height: 100px;
+    width: 100%;
     padding:10px;
-    border:1px solid #ccc;
-    height: 35px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    color:#555;
+    text-transform: uppercase;
+}
+
+.app-title {
+    font-size: 30px;
 }
 
 .app-body {
@@ -112,51 +116,4 @@ Button Styles
     border-radius: 5px;
     font-size: 12px;
     cursor: pointer;
-}
-
-/*******************************
-Order Totals
-*******************************/
-.order-total-container {
-    height: 40px;
-    width: 98%;
-    background-color: #666560;
-    color: #fff;
-    border-radius: 5px;
-    padding:10px;
-    font-size: 20px;
-}
-
-.order-total-col1 {
-    height: 40px;
-    width:49.8%;
-    border-right: 1px solid #fff;
-    float: left;
-}
-
-.order-total-col2 {
-    height: 40px;
-    width:50%;
-    float: left;
-}
-
-.order-total-text-placeholder {
-    width: 50%;
-    float: left;
-}
-
-/*******************************
-Subscriber
-*******************************/
-.subscriber-container {
-    height:100%;
-    width:99.9%;
-    background-color: #F9F9F9;
-    min-height: 100px;
-    border:1px solid #ccc;
-}
-
-.subscriber-header {
-    height: 40px;
-    width:100%;
 }
