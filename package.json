@@ -13,26 +13,26 @@
   "author": "Puneeth",
   "license": "MIT",
   "dependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "redux-actions": "^2.2.1",
-    "react-redux": "^5.0.5",
-    "redux": "^3.7.0",
-    "redux-thunk": "^2.2.0",
-    "prop-types": "^15.6.0"
+    "react": "16.8.8",
+    "react-dom": "16.8.5",
+    "redux-actions": "2.6.5",
+    "react-redux": "6.0.1",
+    "redux": "4.0.1",
+    "redux-thunk": "2.3.0",
+    "prop-types": "15.7.2"
   },
   "devDependencies": {
-    "@types/react": "^16.0.0",
-    "@types/react-dom": "^16.0.0",
-    "@types/react-redux": "5.0.14",
-    "@types/redux": "^3.6.0",
-    "@types/redux-actions": "^2.2.1",
-    "@types/prop-types": "^15.5.2",
-    "ts-loader": "^3.2.0",
-    "css-loader": "^0.27.3",
-    "source-map-loader": "^0.2.3",
-    "typescript": "^2.3.4",
-    "webpack": "^3.5.5",
-    "webpack-dev-server": "^2.5.1"
+    "@types/react": "16.8.8",
+    "@types/react-dom": "16.8.5",
+    "@types/react-redux": "7.0.5",
+    "@types/redux": "3.6.0",
+    "@types/redux-actions": "2.6.0",
+    "@types/prop-types": "15.7.0",
+    "ts-loader": "5.3.3",
+    "css-loader": "2.1.1",
+    "source-map-loader": "0.2.4",
+    "typescript": "3.3.4000",
+    "webpack": "4.29.6",
+    "webpack-dev-server": "3.2.1"
   }
 }
