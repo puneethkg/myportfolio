@@ -10,7 +10,7 @@ export default createStore (
             [actions.getMenuItems.toString()]: (state, action) => {
                 return action.payload
             }
-        },[])
+        },["Home","About Me"])
     }),
     applyMiddleware(thunk)
 );
