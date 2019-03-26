@@ -6,8 +6,8 @@ import * as actions from './Action';
 
 export default createStore (
     combineReducers<State>({
-        deviceList: handleActions<string[]>({
-            [actions.getDeviceList.toString()]: (state, action) => {
+        menuItems: handleActions<string[]>({
+            [actions.getMenuItems.toString()]: (state, action) => {
                 return action.payload
             }
         },[])
@@ -16,5 +16,5 @@ export default createStore (
 );
 
 export interface State {
-    deviceList: string[];
+    menuItems: string[];
 }

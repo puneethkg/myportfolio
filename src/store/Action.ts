@@ -1,3 +1,3 @@
 import { createAction } from 'redux-actions';
 
-export const getDeviceList = createAction<string[]>("GET_DEVICE_LIST");
+export const getMenuItems = createAction<string[]>("GET_MENU_ITEMS");
