@@ -1,15 +1,15 @@
-import * as React from 'react';
+import { connect } from 'react-redux';
+import { AppHeader } from './AppHeader';
+import { State } from '../../store';
+import { getMenuItems } from '../../store/Action';
 
-class Component extends React.Component<any, any> {
-    static displayName = "AppHeader";
-
-    render() {
-        return (
-            <div className="app-header">
-                <label className="app-title" htmlFor="">Puneeth</label>
-            </div>
-        );
-    }
-}
-
-export default Component;
+export default (connect(
+    //Map state to props
+    ({menuItems}:State) => ({menuItems}),
+    //Map dispatch to props
+    (dispatch) => ({
+        getMenuItems: (payload: Array<string>) => {
+            dispatch(getMenuItems(payload));
+        }
+    })
+)(AppHeader as any) as any);

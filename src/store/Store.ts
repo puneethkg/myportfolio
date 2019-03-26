@@ -16,5 +16,5 @@ export default createStore (
 );
 
 export interface State {
-    menuItems: string[];
+    menuItems: Array<string>;
 }
