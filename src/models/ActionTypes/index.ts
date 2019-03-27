@@ -1,0 +1,1 @@
+export const GET_TOP_NAV_LINKS = 'GET_TOP_NAV_LINKS';

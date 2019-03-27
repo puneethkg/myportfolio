@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
+
 import { AppHeader } from './AppHeader';
 import { State } from '../../store';
-import { getMenuItems } from '../../store/Action';
+import { getTopNavLinks } from '../../store/Action';
+import { NavigationType } from './../../models';
 
 export default (connect(
     //Map state to props
-    ({menuItems}:State) => ({menuItems}),
+    ({topNavLinks}:State) => ({topNavLinks}),
     //Map dispatch to props
     (dispatch) => ({
-        getMenuItems: (payload: Array<string>) => {
-            dispatch(getMenuItems(payload));
+        getTopNavLinks: (payload: Array<NavigationType>) => {
+            dispatch(getTopNavLinks(payload));
         }
     })
 )(AppHeader as any) as any);

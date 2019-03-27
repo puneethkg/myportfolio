@@ -1,8 +1,8 @@
 import store from './Store';
-import menuItems from './../stub/MenuItems';
-import { getMenuItems } from './Action';
+import { topNavigationItems } from './../data';
+import { getTopNavLinks } from './Action';
 
-export const getMenu = () => {
-    console.log(menuItems);
-    store.dispatch(getMenuItems(menuItems));
+export const getTopNavigationLinks = () => {
+    console.log('Inside getTopNavigationLinks method.' );
+    store.dispatch(getTopNavLinks(topNavigationItems));
 }

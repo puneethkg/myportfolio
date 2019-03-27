@@ -1,3 +1,6 @@
 import { createAction } from 'redux-actions';
 
-export const getMenuItems = createAction<string[]>("GET_MENU_ITEMS");
+import * as ActionTypes from './../models/ActionTypes';
+import  { NavigationType }  from './../models';
+
+export const getTopNavLinks = createAction<NavigationType[]>(ActionTypes.GET_TOP_NAV_LINKS);

@@ -1,7 +1,9 @@
 import * as React from "react";
 
+import { NavigationType } from './../../models';
+
 export interface HeaderProps {
-    menuItems: Array<string>;
+    topNavLinks: Array<NavigationType>;
 }
 
 export class AppHeader extends React.Component<HeaderProps, any> {
@@ -12,16 +14,16 @@ export class AppHeader extends React.Component<HeaderProps, any> {
     }
 
     render() {
-        let {menuItems} = this.props;
+        let {topNavLinks} = this.props;
 
         return(
             <div>
                 <ul>
                     {
-                        menuItems && menuItems.length > 0 && menuItems.map((menuItem: string) => {
+                        topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => {
                             return(
                                 <li>
-                                    {menuItem}
+                                    {navLink.description}
                                 </li>
                             );
                         })
