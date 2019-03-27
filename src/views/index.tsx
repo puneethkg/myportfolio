@@ -2,9 +2,9 @@ import * as React from 'react';
 
 import AppHeader from './AppHeader';
 import WelcomeMessage from './WelcomeMessage';
-import { getTopNavigationLinks } from './../store/Client';
+import { getTopNavigationLinks } from '../store/Client';
 
-export class App extends React.Component<any> {
+export class Application extends React.Component<any> {
     static displayName = "App";
 
     constructor(props: any) {

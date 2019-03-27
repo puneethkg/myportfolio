@@ -2,12 +2,14 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
-import { App } from './views/App';
+import { Application } from './views';
 import Store from './store';
+
+import './resources/styles/app.css';
 
 ReactDOM.render(
     <Provider store={Store}>
-        <App />
+        <Application />
     </Provider>,
     document.getElementById("container")
 );

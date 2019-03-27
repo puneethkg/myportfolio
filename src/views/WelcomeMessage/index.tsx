@@ -6,8 +6,7 @@ class Component extends React.Component<any, any> {
     render() {
         return (
             <div>
-                <h1>React redux boilderplate</h1>
-                <h2>- Puneeth</h2>
+                <label className="app-title">react redux boilerplate</label>
             </div>
         );
     }
