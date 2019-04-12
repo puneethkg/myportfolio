@@ -1,17 +1,21 @@
-import { connect } from 'react-redux';
+import * as React from 'react';
 
-import { AppHeader } from './AppHeader';
-import { State } from '../../store';
-import { getTopNavLinks } from '../../store/Action';
-import { NavigationType } from './../../models';
+import { AppTitle } from './AppTitle';
+import NavBar from "./NavBar";
 
-export default (connect(
-    //Map state to props
-    ({topNavLinks}:State) => ({topNavLinks}),
-    //Map dispatch to props
-    (dispatch) => ({
-        getTopNavLinks: (payload: Array<NavigationType>) => {
-            dispatch(getTopNavLinks(payload));
-        }
-    })
-)(AppHeader as any) as any);
+export class AppHeader extends React.Component<any> {
+    static displayName = "App";
+
+    constructor(props: any) {
+        super(props);
+    }
+
+    render() {
+        return (
+            <div>
+                 <AppTitle/>
+                 <NavBar/>
+            </div>
+        );
+    }
+}

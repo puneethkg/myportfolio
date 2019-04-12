@@ -1,13 +1,13 @@
 import * as React from "react";
 
-import { NavigationType } from './../../models';
+import { NavigationType } from '../../../models';
 
 export interface HeaderProps {
     topNavLinks: Array<NavigationType>;
 }
 
-export class AppHeader extends React.Component<HeaderProps, any> {
-    static displayName = "App Header";
+export class NavBar extends React.Component<HeaderProps, any> {
+    static displayName = "Top Navigation Bar";
 
     constructor(props: any) {
         super(props);
@@ -22,7 +22,7 @@ export class AppHeader extends React.Component<HeaderProps, any> {
                     {
                         topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => {
                             return(
-                                <li>
+                                <li className="pull-right">
                                     {navLink.description}
                                 </li>
                             );

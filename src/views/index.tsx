@@ -1,7 +1,6 @@
 import * as React from 'react';
 
-import AppHeader from './AppHeader';
-import WelcomeMessage from './WelcomeMessage';
+import { AppHeader } from './AppHeader';
 import { getTopNavigationLinks } from '../store/Client';
 
 export class Application extends React.Component<any> {
@@ -16,8 +15,7 @@ export class Application extends React.Component<any> {
     render() {
         return (
             <div className="container">
-                <WelcomeMessage />
-                <AppHeader />
+                 <AppHeader />
             </div>
         );
     }
