@@ -5,26 +5,30 @@ export const topNavigationItems: Array<NavigationType> = [{
     description: "Home",
     defaulted: true,
     disabled: false,
-    url: "/"
+    url: "#",
+    index: 0
 },
 {
     id: "02",
-    description: "About Me",
+    description: "About",
     defaulted: true,
     disabled: false,
-    url: "/"
+    url: "#",
+    index: 1
 },
 {
     id: "03",
-    description: "My Projects",
+    description: "Projects",
     defaulted: true,
     disabled: false,
-    url: "/"
+    url: "#",
+    index: 2
 },
 {
     id: "04",
-    description: "Contact Me",
+    description: "Contact",
     defaulted: true,
     disabled: false,
-    url: "/"
+    url: "#",
+    index: 3
 }];

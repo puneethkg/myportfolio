@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { AppHeader } from './AppHeader';
+import { Routes } from './Routes';
 import { getTopNavigationLinks } from '../store/Client';
 
 export class Application extends React.Component<any> {
@@ -15,7 +15,7 @@ export class Application extends React.Component<any> {
     render() {
         return (
             <div className="container">
-                 <AppHeader />
+                 <Routes />
             </div>
         );
     }

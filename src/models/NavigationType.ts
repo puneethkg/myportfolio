@@ -4,4 +4,5 @@ export interface NavigationType {
     defaulted: boolean;
     disabled: boolean;
     url: string;
+    index: number;
 }
