@@ -1,27 +1,17 @@
-import * as React from 'react';
-import { withRouter } from 'react-router-dom';
-import withStyles from '@material-ui/core/styles/withStyles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button'
+import { connect } from 'react-redux';
 
-import { DecoratedClass } from './AppTitle';
+import AppHeader from './AppHeader';
+import { State } from '../../store';
+import { getTopNavLinks } from '../../store/Action';
+import { NavigationType } from '../../models';
 
-export class AppHeader extends React.Component<any> {
-    static displayName = "App";
-
-    constructor(props: any) {
-        super(props);
-    }
-
-    render() {
-        return (
-           <React.Fragment>
-               <CssBaseline />
-               <DecoratedClass text="ATHARV" />
-           </React.Fragment>
-        );
-    }
-}
+export default (connect(
+    //Map state to props
+    ({topNavLinks}:State) => ({topNavLinks}),
+    //Map dispatch to props
+    (dispatch) => ({
+        getTopNavLinks: (payload: Array<NavigationType>) => {
+            dispatch(getTopNavLinks(payload));
+        }
+    })
+)(AppHeader as any) as any);

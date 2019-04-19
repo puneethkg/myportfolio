@@ -13,7 +13,7 @@ export const topNavigationItems: Array<NavigationType> = [{
     description: "About",
     defaulted: true,
     disabled: false,
-    url: "#",
+    url: "/navBar",
     index: 1
 },
 {

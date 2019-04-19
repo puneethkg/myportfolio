@@ -6,8 +6,8 @@
   "homepage": "http://localhost:3000/",
   "main": "./src/index.tsx",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack -w",
+    "build": "webpack --progress --colors",
+    "dev": "webpack -w --progress --colors",
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
