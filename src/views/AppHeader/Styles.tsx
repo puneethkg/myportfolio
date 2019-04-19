@@ -5,17 +5,16 @@ export const styles = (theme: Theme) => createStyles({
     position: 'relative',
     boxShadow: 'none',
     borderBottom: `1px solid ${theme.palette.grey['100']}`,
-    backgroundColor: 'white',
-
+    backgroundColor: 'white'
   },
-  inline: {
-    display: 'inline'
+  appTitle: {
+    display: 'inline',
+    flex: 1
   },
   flex: {
     display: 'flex',
     [theme.breakpoints.down('sm')]: {
       display: 'flex',
-      justifyContent: 'space-evenly',
       alignItems: 'center'
     }
   },

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link, withRouter, RouteComponentProps } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import {
   WithStyles,
   Typography,
@@ -10,10 +10,10 @@ import {
   SwipeableDrawer,
   List,
   ListItem,
-  ListItemText
+  ListItemText,
+  Tabs,
+  Tab
 } from '@material-ui/core';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 import MenuIcon from '@material-ui/icons/Menu';
 import withStyles from '@material-ui/core/styles/withStyles';
 
@@ -57,49 +57,46 @@ class AppHeader extends React.Component<WithStyles<typeof styles> & AppHeaderPro
     let { topNavLinks, classes } = this.props;
 
     return (
-      <AppBar position="absolute" color="default" className={classes.appBar}>
-        <Toolbar>
-          <Grid container spacing={24} alignItems="baseline">
-            <Grid item xs={12} className={classes.flex}>
-              <div className={classes.inline}>
-                <Typography variant="h6" color="inherit" noWrap>
-                  <Link to='/' className={classes.link}>
-                    {/* <img width={20} src={logo} alt="" /> */}
-                    <span className={classes.tagline}>PUNEETH</span>
-                  </Link>
-                </Typography>
-              </div>
-              <React.Fragment>
-                <div className={classes.productLogo}>
-                  <Typography>
-                    my portfolio
+      <React.Fragment>
+        <AppBar position="absolute" color="default" className={classes.appBar}>
+          <Toolbar>
+            <Grid container spacing={24} alignItems="baseline">
+              <Grid item xs={12} className={classes.flex}>
+                <div className={classes.appTitle}>
+                  <Typography variant="h6" color="inherit" noWrap>
+                    <Link to='/' className={classes.link}>
+                      {/* <img width={20} src={logo} alt="" /> */}
+                      <span className={classes.tagline}>PUNEETH</span>
+                    </Link>
                   </Typography>
                 </div>
-                <div className={classes.iconContainer}>
-                  <IconButton className={classes.iconButton} color="inherit" aria-label="Menu">
-                    <MenuIcon />
-                  </IconButton>
-                </div>
-                <div className={classes.tabContainer}>
-                  <SwipeableDrawer anchor="right" open={this.state.menuDrawer} onClose={this.mobileMenuClose} onOpen={this.mobileMenuOpen}>>
-                    <AppBar title="Menu" />
-                    <List>
-                      <ListItem>
-                        <ListItemText primary="Home" />
-                      </ListItem>
-                    </List>
-                  </SwipeableDrawer>
-                  <Tabs value={this.state.currentTab} indicatorColor="primary" textColor="primary" onChange={this.mobileMenuClose}>
-                    {topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => (
-                      <Tab value={navLink.id} label={navLink.description} href={navLink.url} classes={{ root: classes.tabItem }} />
-                    ))}
-                  </Tabs>
-                </div>
-              </React.Fragment>
+                <React.Fragment>
+                  <div className={classes.iconContainer}>
+                    <IconButton className={classes.iconButton} color="inherit" aria-label="Menu" onClick={this.mobileMenuOpen}>
+                      <MenuIcon />
+                    </IconButton>
+                  </div>
+                  <div className={classes.tabContainer}>
+                    <SwipeableDrawer anchor="right" open={this.state.menuDrawer} onClose={this.mobileMenuClose} onOpen={this.mobileMenuOpen}>
+                      <AppBar title="Menu" />
+                      <List>
+                        <ListItem>
+                          <ListItemText primary="Home" />
+                        </ListItem>
+                      </List>
+                    </SwipeableDrawer>
+                    <Tabs value={this.state.currentTab} indicatorColor="primary" textColor="primary" onChange={this.mobileMenuClose}>
+                      {topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => (
+                        <Tab value={navLink.id} label={navLink.description} href={navLink.url} classes={{ root: classes.tabItem }} />
+                      ))}
+                    </Tabs>
+                  </div>
+                </React.Fragment>
+              </Grid>
             </Grid>
-          </Grid>
-        </Toolbar>
-      </AppBar>
+          </Toolbar>
+        </AppBar>
+      </React.Fragment>
     )
   }
 }
