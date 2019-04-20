@@ -34,8 +34,9 @@ export const styles = (theme: Theme) => createStyles({
   tagline: {
     display: 'inline-block',
     marginLeft: 10,
+    color: '#482099',
     [theme.breakpoints.up('md')]: {
-      paddingTop: '0.8em'
+      paddingTop: '0.5em'
     }
   },
   iconContainer: {
@@ -55,8 +56,6 @@ export const styles = (theme: Theme) => createStyles({
     }
   },
   tabItem: {
-    paddingTop: 20,
-    paddingBottom: 20,
     minWidth: 'auto'
   }
 });

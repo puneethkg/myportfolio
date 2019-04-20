@@ -30,7 +30,7 @@ interface AppHeaderProps extends WithStyles<typeof styles> {
 
 type AppHeaderState = {
   menuDrawer: boolean;
-  currentTab: string;
+  currentTab: number;
 };
 
 class AppHeader extends React.Component<WithStyles<typeof styles> & AppHeaderProps, AppHeaderState> {
@@ -41,7 +41,7 @@ class AppHeader extends React.Component<WithStyles<typeof styles> & AppHeaderPro
 
     this.state = {
       menuDrawer: false,
-      currentTab: "Home"
+      currentTab: 0
     };
   }
 
@@ -57,46 +57,44 @@ class AppHeader extends React.Component<WithStyles<typeof styles> & AppHeaderPro
     let { topNavLinks, classes } = this.props;
 
     return (
-      <React.Fragment>
-        <AppBar position="absolute" color="default" className={classes.appBar}>
-          <Toolbar>
-            <Grid container spacing={24} alignItems="baseline">
-              <Grid item xs={12} className={classes.flex}>
-                <div className={classes.appTitle}>
-                  <Typography variant="h6" color="inherit" noWrap>
-                    <Link to='/' className={classes.link}>
-                      {/* <img width={20} src={logo} alt="" /> */}
-                      <span className={classes.tagline}>PUNEETH</span>
-                    </Link>
-                  </Typography>
+      <AppBar position="absolute" color="default" className={classes.appBar}>
+        <Toolbar>
+          <Grid container spacing={24} alignItems="baseline">
+            <Grid item xs={12} className={classes.flex}>
+              <div className={classes.appTitle}>
+                <Typography variant="h6" color="inherit" noWrap>
+                  <Link to='/' className={classes.link}>
+                    {/* <img width={20} src={logo} alt="" /> */}
+                    <span className={classes.tagline}>PUNEETH</span>
+                  </Link>
+                </Typography>
+              </div>
+              <React.Fragment>
+                <div className={classes.iconContainer}>
+                  <IconButton className={classes.iconButton} color="inherit" aria-label="Menu" onClick={this.mobileMenuOpen}>
+                    <MenuIcon />
+                  </IconButton>
                 </div>
-                <React.Fragment>
-                  <div className={classes.iconContainer}>
-                    <IconButton className={classes.iconButton} color="inherit" aria-label="Menu" onClick={this.mobileMenuOpen}>
-                      <MenuIcon />
-                    </IconButton>
-                  </div>
-                  <div className={classes.tabContainer}>
-                    <SwipeableDrawer anchor="right" open={this.state.menuDrawer} onClose={this.mobileMenuClose} onOpen={this.mobileMenuOpen}>
-                      <AppBar title="Menu" />
-                      <List>
-                        <ListItem>
-                          <ListItemText primary="Home" />
-                        </ListItem>
-                      </List>
-                    </SwipeableDrawer>
-                    <Tabs value={this.state.currentTab} indicatorColor="primary" textColor="primary" onChange={this.mobileMenuClose}>
-                      {topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => (
-                        <Tab value={navLink.id} label={navLink.description} href={navLink.url} classes={{ root: classes.tabItem }} />
-                      ))}
-                    </Tabs>
-                  </div>
-                </React.Fragment>
-              </Grid>
+                <div className={classes.tabContainer}>
+                  <SwipeableDrawer anchor="bottom" open={this.state.menuDrawer} onClose={this.mobileMenuClose} onOpen={this.mobileMenuOpen}>
+                    <AppBar title="Menu" />
+                    <List>
+                      <ListItem>
+                        <ListItemText primary="Home" />
+                      </ListItem>
+                    </List>
+                  </SwipeableDrawer>
+                  <Tabs value={this.state.currentTab} onChange={this.mobileMenuClose}>
+                    {topNavLinks && topNavLinks.length > 0 && topNavLinks.map((navLink: NavigationType) => (
+                      <Tab value={navLink.index} label={navLink.description} href={navLink.url} classes={{ root: classes.tabItem }} />
+                    ))}
+                  </Tabs>
+                </div>
+              </React.Fragment>
             </Grid>
-          </Toolbar>
-        </AppBar>
-      </React.Fragment>
+          </Grid>
+        </Toolbar>
+      </AppBar>
     )
   }
 }
